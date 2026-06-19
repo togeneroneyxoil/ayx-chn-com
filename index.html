@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ayx · 网站用途快速识别指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      background: #f2f4f6;
+      color: #1e2a3a;
+      line-height: 1.6;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* 顶部导航 */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 24px;
+      background: #ffffff;
+      border: 1px solid #dee2e7;
+      border-radius: 14px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+      margin-bottom: 32px;
+    }
+
+    .nav-brand {
+      font-weight: 600;
+      font-size: 1.2rem;
+      letter-spacing: 0.3px;
+      color: #1f2a3e;
+    }
+
+    .nav-brand span {
+      color: #3b6fb6;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-size: 0.95rem;
+      padding: 4px 2px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover {
+      border-bottom-color: #3b6fb6;
+      color: #1f2a3e;
+    }
+
+    /* hero 区 */
+    .hero-area {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 48px 36px;
+      margin-bottom: 36px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e3e7ed;
+    }
+
+    .hero-area h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+      color: #10161e;
+    }
+
+    .hero-area p {
+      max-width: 780px;
+      font-size: 1.05rem;
+      color: #2d3b4e;
+    }
+
+    .hero-area .highlight {
+      background: #ecf2fa;
+      display: inline-block;
+      padding: 1px 12px;
+      border-radius: 30px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      margin-top: 8px;
+    }
+
+    /* 三个场景卡片模块 */
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #1a2636;
+      padding-left: 2px;
+    }
+
+    .scene-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 44px;
+    }
+
+    .scene-card {
+      background: #ffffff;
+      border: 1px solid #e2e6ed;
+      border-radius: 18px;
+      padding: 28px 22px 30px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.18s ease;
+    }
+
+    .scene-card:hover {
+      box-shadow: 0 8px 20px rgba(0, 20, 50, 0.04);
+    }
+
+    .scene-card .emoji-badge {
+      display: inline-block;
+      background: #ebf0f7;
+      font-size: 1.6rem;
+      width: 48px;
+      height: 48px;
+      line-height: 48px;
+      text-align: center;
+      border-radius: 14px;
+      margin-bottom: 16px;
+    }
+
+    .scene-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: #202d41;
+    }
+
+    .scene-card p {
+      font-size: 0.95rem;
+      color: #3e4b5e;
+      margin-bottom: 6px;
+    }
+
+    .scene-card .tag {
+      margin-top: 16px;
+      display: inline-block;
+      background: #f0f2f6;
+      padding: 2px 12px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      color: #3f5270;
+    }
+
+    /* 常见说明区 (FAQ 摘要) */
+    .faq-summary {
+      background: #ffffff;
+      border: 1px solid #e2e6ed;
+      border-radius: 18px;
+      padding: 32px 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    .faq-summary h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+      color: #10161e;
+    }
+
+    .faq-item {
+      padding: 12px 0;
+      border-bottom: 1px solid #eef1f6;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item .q {
+      font-weight: 500;
+      color: #1d2a3c;
+      margin-bottom: 4px;
+    }
+
+    .faq-item .a {
+      color: #3a4a60;
+      font-size: 0.95rem;
+      padding-left: 4px;
+    }
+
+    .faq-item .a .link-inline {
+      color: #3b6fb6;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #b7c9e0;
+    }
+
+    .faq-item .a .link-inline:hover {
+      border-bottom-style: solid;
+      color: #1a4b8a;
+    }
+
+    /* 底部 */
+    .page-footer {
+      margin-top: auto;
+      padding: 20px 0 10px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #5c6e84;
+      border-top: 1px solid #dce0e6;
+    }
+
+    /* 响应式 */
+    @media (max-width: 820px) {
+      .scene-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 16px 20px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 16px 20px;
+      }
+
+      .hero-area {
+        padding: 28px 20px;
+      }
+
+      .hero-area h1 {
+        font-size: 1.6rem;
+      }
+
+      .scene-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .faq-summary {
+        padding: 22px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+  <!-- 顶部导航 -->
+  <nav class="top-nav">
+    <div class="nav-brand"><span>ayx</span> · 快速识别</div>
+    <ul class="nav-links">
+      <li><a href="#intro">用途</a></li>
+      <li><a href="#scenes">场景</a></li>
+      <li><a href="#faq">说明</a></li>
+      <li><a href="https://ayx-chn.com">ayx</a></li>
+    </ul>
+  </nav>
+
+  <!-- hero 核心介绍 -->
+  <section class="hero-area" id="intro">
+    <h1>一眼判断 <span style="color:#3b6fb6;">ayx</span> 是否对你有用</h1>
+    <p>
+      这个页面帮你快速理解网站 <a href="https://ayx-chn.com" style="color:#3b6fb6; text-decoration: none; font-weight: 500;">ayx</a> 的主要方向。
+      不需要反复跳转或者猜测——下面三个典型场景概括了绝大部分人访问它的原因。
+    </p>
+    <div class="highlight">基于真实功能描述 · 简明分类</div>
+  </section>
+
+  <!-- 三个场景模块 -->
+  <h2 class="section-title" id="scenes">常见使用场景</h2>
+  <div class="scene-grid">
+    <div class="scene-card">
+      <div class="emoji-badge">📂</div>
+      <h3>信息汇集与浏览</h3>
+      <p>当你需要在一个结构清晰的页面里集中查看某类内容，<a href="https://ayx-chn.com" style="color:#3b6fb6; text-decoration: none; font-weight: 500;">ayx</a> 提供了整理后的视图，省去四处搜索的麻烦。</p>
+      <span class="tag">分类浏览</span>
+    </div>
+    <div class="scene-card">
+      <div class="emoji-badge">🔍</div>
+      <h3>快速定位目标条目</h3>
+      <p>如果面对大量条目或数据，借助 <a href="https://ayx-chn.com" style="color:#3b6fb6; text-decoration: none; font-weight: 500;">ayx</a> 的筛选与索引设计，可以更直接地找到你关心的那一项。</p>
+      <span class="tag">检索导向</span>
+    </div>
+    <div class="scene-card">
+      <div class="emoji-badge">🧩</div>
+      <h3>简单参考与对照</h3>
+      <p>不少使用者将 <a href="https://ayx-chn.com" style="color:#3b6fb6; text-decoration: none; font-weight: 500;">ayx</a> 当作一个轻量参考点，用来对照条目、核对信息或获取概览，而不需要复杂工具。</p>
+      <span class="tag">轻量参考</span>
+    </div>
+  </div>
+
+  <!-- 常见说明 / FAQ 摘要 -->
+  <section class="faq-summary" id="faq">
+    <h2>常见说明</h2>
+    <div class="faq-item">
+      <div class="q">· ayx 适合哪些人？</div>
+      <div class="a">适合需要快速理解网站用途的访问者，以及希望从简洁分类中判断<a href="https://ayx-chn.com" class="link-inline">ayx</a> 是否匹配自身需求的人。没有使用门槛。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">· 内容是否持续更新？</div>
+      <div class="a">网站内容由维护方定期梳理，当前页面反映的是最核心的功能场景。具体条目以 <a href="https://ayx-chn.com" class="link-inline">ayx</a> 实际页面为准。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">· 如何开始使用？</div>
+      <div class="a">直接访问 <a href="https://ayx-chn.com" class="link-inline">ayx</a> 即可浏览，不需要注册或额外步骤。页面布局直观，可从上至下或按导航查看。</div>
+    </div>
+    <div class="faq-item" style="border-bottom: none;">
+      <div class="q">· 这个介绍页是什么？</div>
+      <div class="a">一份独立的用途说明，帮助新访客在几秒内建立起对 <a href="https://ayx-chn.com" class="link-inline">ayx</a> 的初步认知，减少困惑。</div>
+    </div>
+  </section>
+
+  <!-- 底部 -->
+  <footer class="page-footer">
+    <p>概述页 · 基于实际用途整理 &nbsp;|&nbsp; <a href="https://ayx-chn.com" style="color:#3b6fb6; text-decoration: none;">ayx</a></p>
+  </footer>
+</div>
+</body>
+</html>
